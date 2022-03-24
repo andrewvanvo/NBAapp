@@ -5,7 +5,10 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+
+//Pages
 import HomePage from './pages/HomePage';
+import GamesPage from './pages/GamesPage';
 
 //Date Picker Modules
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
@@ -23,12 +26,10 @@ function App() {
           <Routes>
 
               <Route path="/" element={<HomePage />} />
+              <Route path ="gamespage" element={<GamesPage/>} />
 
 
-
-            
-
-            </Routes>
+          </Routes>
         </BrowserRouter>,
       </div>
     </MuiPickersUtilsProvider>
