@@ -30,10 +30,11 @@ function App() {
 
 
           </Routes>
-        </BrowserRouter>,
+        </BrowserRouter>
       </div>
     </MuiPickersUtilsProvider>
     
+
   )
 }
 

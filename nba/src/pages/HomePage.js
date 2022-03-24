@@ -1,14 +1,18 @@
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom'
 
 import {KeyboardDatePicker} from '@material-ui/pickers'
 import Grid from '@material-ui/core/Grid'
-import Button from '@mui/material/Button';
 
 // .getMonth() is 0 based. Offset by +1 later for API call
 function HomePage(){
 
   const [selectedDate, setSelectedDate] = useState(new Date());
- 
+  
+  //let PropLink = selectedDate => <Link to='gamespage' {...selectedDate} />
+
+  
+
   return (
     <>
       <br></br>
@@ -23,21 +27,18 @@ function HomePage(){
                 variant='static'
                 autoOk='true'
                 orientation='landscape'
-              
-            />    
-         </Grid>      
+            />
+            
+            <Link to='/gamespage' state={{ dateProp: selectedDate}} >Submit</Link>
+         
+         </Grid>
       </Grid>
-        
-      <Button variant = 'contained' href = '/gamespage' >Submit</Button>
-
-
-      {console.log(selectedDate)}
-      {console.log(selectedDate.getDate())}
-      {console.log(selectedDate.getMonth())}
-      {console.log(selectedDate.getFullYear())}
       
+     
     </>
   )
 }
 
 export default HomePage;
+
+//[selectedDate.getDate(),selectedDate.getMonth(),selectedDate.getFullYear()]
