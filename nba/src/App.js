@@ -9,6 +9,7 @@ import {
 //Pages
 import HomePage from './pages/HomePage';
 import GamesPage from './pages/GamesPage';
+import ResultsPage from './pages/ResultsPage';
 
 //Date Picker Modules
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
@@ -27,6 +28,8 @@ function App() {
 
               <Route path="/" element={<HomePage />} />
               <Route path ="gamespage" element={<GamesPage/>} />
+              <Route path='results' element={<ResultsPage/>}/>
+
 
 
           </Routes>
