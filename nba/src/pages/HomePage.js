@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import { KeyboardDatePicker } from '@material-ui/pickers'
 import Grid from '@material-ui/core/Grid'
-import Button from '@mui/material/Button';
 
 // .getMonth() is 0 based. Offset by +1 later for API call
 function HomePage() {
@@ -41,3 +40,5 @@ function HomePage() {
 };
 
 export default HomePage;
+
+//[selectedDate.getDate(),selectedDate.getMonth(),selectedDate.getFullYear()]
