@@ -10,6 +10,8 @@ function GamesPage(){
     //Pulling state variable/Date picked from Homepage
     const location = useLocation()
     const {dateProp} = location.state
+    
+    //date variables to use for api
     const day = dateProp.getDate()
     const month = dateProp.getMonth() + 1
     const year = dateProp.getFullYear()
@@ -25,8 +27,10 @@ function GamesPage(){
     return (
         <>
             <p>GamesPage test</p>
-
-            {console.log(day,month,year)}
+            <p>Date:{day}</p>
+            <p>Month:{month}</p>
+            <p>Year:{year}</p>
+            
         </>
     )
 };
