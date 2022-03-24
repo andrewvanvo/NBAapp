@@ -19,21 +19,20 @@ import './App.css';
 
 
 function App() {
-  return(
+  return (
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <div className = 'App'>
+      <div className='App'>
         <BrowserRouter>
           <Routes>
 
-              <Route path="/" element={<HomePage />} />
-              <Route path ="gamespage" element={<GamesPage/>} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="gamespage" element={<GamesPage />} />
 
 
           </Routes>
         </BrowserRouter>
       </div>
     </MuiPickersUtilsProvider>
-    
 
   )
 }
