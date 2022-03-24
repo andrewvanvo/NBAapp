@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-<<<<<<< HEAD
 import { useHistory } from "react-router-dom";
 // Axios 
 import axios from "axios";
@@ -9,30 +8,12 @@ import axios from "axios";
 
 
 
-=======
-import { useHistory, useLocation } from "react-router-dom";
->>>>>>> main
 
 //changed format of module export. Wasn't playing well with the BrowserRouter for some reason
 
 
 //function GamesPage ({ gameDate }){
-<<<<<<< HEAD
 function GamesPage() {
-=======
-function GamesPage(){
-
-    //Pulling state variable/Date picked from Homepage
-    const location = useLocation()
-    const {dateProp} = location.state
-    
-    //date variables to use for api
-    const day = dateProp.getDate()
-    const month = dateProp.getMonth() + 1
-    const year = dateProp.getFullYear()
-    
-
->>>>>>> main
     // TEMP, need api call here
     //const [time, setTime] = useState(gameDate.time);
     // TEMP, need api call here
@@ -62,16 +43,8 @@ function GamesPage(){
 
     return (
         <>
-<<<<<<< HEAD
             <p>List of games</p>
 
-=======
-            <p>GamesPage test</p>
-            <p>Date:{day}</p>
-            <p>Month:{month}</p>
-            <p>Year:{year}</p>
-            
->>>>>>> main
         </>
     )
 };
