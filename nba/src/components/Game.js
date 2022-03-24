@@ -6,8 +6,8 @@ import axios from "axios";
 function Game({ game }) {
     return (
         <ul>
-            <li>game.teams.home.nickname</li>
-            <li>game.teams.away.nickname</li>
+            <li>{game.teams.home.name}</li>
+            <li>{game.teams.visitors.name}</li>
         </ul>
     )
 }
