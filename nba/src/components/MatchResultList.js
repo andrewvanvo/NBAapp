@@ -7,10 +7,11 @@ function MatchResultList ({results}){
     
     return(
         <>
-            <ul>
-                {results.map((result, i) => <PlayerMatchResult result={result} key={i}/>)
-                }
-            </ul>
+        
+            <div>
+            {results.map((result, i) => <PlayerMatchResult result={result} key={i}/>)}
+            </div>
+            
 
             
         </>
