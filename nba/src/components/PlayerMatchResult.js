@@ -6,7 +6,7 @@ function PlayerMatchResult({result}){
 
     return(
         <>
-            <li>player comp</li>
+            <li>{result.points}</li>
         </>
     )
 
