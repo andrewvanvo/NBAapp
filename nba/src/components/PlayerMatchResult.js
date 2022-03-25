@@ -7,6 +7,10 @@ function PlayerMatchResult({result}){
     return(
         <>
             <li>Points: {result.points ?? 0} </li>
+
+
+            
+                        
         </>
     )
 
