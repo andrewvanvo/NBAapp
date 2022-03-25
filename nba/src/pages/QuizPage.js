@@ -8,8 +8,8 @@ import QuestionsList from '../components/QuestionsList';
 
 function QuizPage() {
 
+    //parsing URL param, gameID variable will be a string
     const params = new URLSearchParams(window.location.search)
-
     const gameID = params.get('gameID')
 
     // let temp_game_id = 8133;
@@ -38,6 +38,9 @@ function QuizPage() {
     // useEffect(() => {
     //     loadGame();
     // }, []);
+
+
+
 
     return (
         <div>

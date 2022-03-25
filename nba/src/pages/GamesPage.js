@@ -5,10 +5,13 @@ import { useHistory, useLocation } from "react-router-dom";
 import GamesList from '../components/GamesList';
 
 //MUI
-import { Box } from '@material-ui/core';
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText'
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container'
+import Card from '@mui/material/Card'
+import List from '@mui/material/List'
+import Grid from '@mui/material/Grid'
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText'
 
 function GamesPage() {
 
@@ -66,15 +69,18 @@ function GamesPage() {
     }, []);
 
     return (
-        <>
-            <Box sx={{ width: '100%', maxWidth: 1500, bgcolor: 'background.paper' }}>
-                <nav aria-label="main mailbox folders">
+
+        <Grid container spacing={2} justifyContent='center' alignItems='center'>
+            <Grid item xs={4} aligntItems='center'>
+                <Card>
                     <List>
                         <GamesList games={games} />
                     </List>
-                </nav>
-            </Box>
-        </>
+                </Card>
+            </Grid>
+        </Grid>
+
+
     )
 };
 

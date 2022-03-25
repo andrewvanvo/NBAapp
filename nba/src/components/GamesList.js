@@ -4,9 +4,9 @@ import React from 'react';
 import Game from './Game';
 
 //MUI
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText'
 import { ListItemButton } from '@mui/material';
 import { Link } from 'react-router-dom';
 
