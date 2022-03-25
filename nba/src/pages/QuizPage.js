@@ -8,6 +8,10 @@ import QuestionsList from '../components/QuestionsList';
 
 function QuizPage() {
 
+    const params = new URLSearchParams(window.location.search)
+
+    const gameID = params.get('gameID')
+
     // let temp_game_id = 8133;
 
     // const [game, setGame] = useState([]);
@@ -36,10 +40,11 @@ function QuizPage() {
     // }, []);
 
     return (
-        <>
+        <div>
             <h1>List of Questions</h1>
+            <h2>{gameID}</h2>
             <QuestionsList></QuestionsList>
-        </>
+        </div>
     )
 
 }
