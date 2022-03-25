@@ -1,12 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 
 
-function PlayerMatchResult(){
+function PlayerMatchResult({result}){
 
     return(
         <>
-            <p>Player Result comp</p>
+            <li>player comp</li>
         </>
     )
 
