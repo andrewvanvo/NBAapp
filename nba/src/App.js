@@ -11,7 +11,6 @@ import HomePage from './pages/HomePage';
 import GamesPage from './pages/GamesPage';
 import QuizPage from './pages/QuizPage';
 import ResultsPage from './pages/ResultsPage';
-import QuizPage from './pages/QuizPage';
 
 //Date Picker Modules
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';

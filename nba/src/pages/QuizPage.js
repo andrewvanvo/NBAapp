@@ -35,6 +35,13 @@ function QuizPage() {
     //     loadGame();
     // }, []);
 
+
+    
+    //parsing URL param, gameID variable will be a string
+    const params = new URLSearchParams(window.location.search) 
+    const gameID = params.get('gameID')
+    
+    
     return (
         <>
             <h1>List of Questions</h1>
