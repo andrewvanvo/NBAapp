@@ -45,7 +45,7 @@ function QuizPage() {
     return (
         <>
             <h1>List of Questions</h1>
-            <QuestionsList></QuestionsList>
+            <QuestionsList gameID={gameID} ></QuestionsList>
         </>
     )
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-
-function QuestionsList() {
+import {useNavigate} from 'react-router-dom';
+function QuestionsList(props) {
 
 
     const questions = [
@@ -44,9 +44,8 @@ function QuestionsList() {
 
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [showScore, setShowScore] = useState(false);
     const [score, setScore] = useState(0);
-
+    let navigate = useNavigate()
 
     const handleClickAnswer = (isCorrect) => {
         if (isCorrect) {
@@ -56,32 +55,33 @@ function QuestionsList() {
         if (nextQuestion < questions.length) {
             setCurrentQuestion(nextQuestion);
         } else {
-            setShowScore(true);
+            let path = '/results'
+            navigate(path, {state: {
+                gameID: props.gameID,
+                score: score
+            }})
+            
         }
 
     };
 
     return (
-        <div className='QuestionsList'>
-            {showScore ? (
-                <div className='score-section'>You scored {score} out of {questions.length}</div>
-            ) : (
-                <>
-                    <div className='question-section'>
-                        <div className='question-count'>
-                            <span>Question {currentQuestion + 1}</span>/{questions.length}
-                        </div>
-                        <div className='question-text'>{questions[currentQuestion].question}</div>
-                    </div>
-                    <div className='answer-section'>
-                        {questions[currentQuestion].options.map((option, index) => (
-                            <button onClick={() => handleClickAnswer(option.isCorrect)}>{option.answer}</button>
-                        ))}
-                    </div>
-                </>
-            )}
-        </div>
-    );
+        
+        <>
+            <div className='question-section'>
+                <div className='question-count'>
+                    <span>Question {currentQuestion + 1}</span>/{questions.length}
+                </div>
+                <div className='question-text'>{questions[currentQuestion].question}</div>
+            </div>
+            <div className='answer-section'>
+                {questions[currentQuestion].options.map((option, index) => (
+                    <button onClick={() => handleClickAnswer(option.isCorrect)}>{option.answer}</button>
+                ))}
+            </div>
+            
+        </>
+    )
 }
 
-export default QuestionsList;
+export default QuestionsList

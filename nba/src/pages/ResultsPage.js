@@ -1,7 +1,15 @@
 import React, {useState, useEffect} from 'react'
+import { useLocation } from 'react-router-dom';
 import MatchResultList from '../components/MatchResultList';
 
-
+//MUI
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container'
+import Card from '@mui/material/Card'
+import List from '@mui/material/List'
+import Grid from '@mui/material/Grid'
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText'
 
 function ResultsPage(){
 
@@ -14,22 +22,32 @@ function ResultsPage(){
         }
       };
 
+    let location = useLocation()
+    let gameID = location.state.gameID
+    let score = location.state.score
+    console.log(gameID)
+    console.log(score)
+
+
     const loadResults = async () => {
-        const response = await fetch('https://api-nba-v1.p.rapidapi.com/players/statistics?game=8133', options)
+        const response = await fetch(`https://api-nba-v1.p.rapidapi.com/players/statistics?game=${gameID}`, options)
         const data = await response.json();
-        console.log(data.response);
         setResults(data.response);
+        
         
     }
 
     useEffect(() => {
         loadResults();
+        
     }, []);
+
 
     return(
         <>
             <p>ResultsPageTest</p>
             <MatchResultList results={results}/>
+            
         </>
     )
 }
