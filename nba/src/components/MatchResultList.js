@@ -24,12 +24,12 @@ export default function MatchResultList ({results}){
                       <TableCell>Player</TableCell>
                       <TableCell align="right">Team</TableCell>
                       <TableCell align="right">Points</TableCell>
-                      <TableCell align="right">Minutes Played</TableCell>
-                      <TableCell align="right">Total Rebounds</TableCell>
                       <TableCell align="right">Assists</TableCell>
+                      <TableCell align="right">Total Rebounds</TableCell>
                       <TableCell align="right">Steals</TableCell>
                       <TableCell align="right">Turnovers</TableCell>
                       <TableCell align="right">Blocks</TableCell>
+                      <TableCell align="right">Minutes Played</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
