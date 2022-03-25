@@ -9,6 +9,7 @@ import {
 //Pages
 import HomePage from './pages/HomePage';
 import GamesPage from './pages/GamesPage';
+import QuizPage from './pages/QuizPage';
 import ResultsPage from './pages/ResultsPage';
 import QuizPage from './pages/QuizPage';
 
@@ -18,7 +19,6 @@ import DateFnsUtils from '@date-io/date-fns'
 
 //CSS 
 import './App.css';
-
 
 function App() {
   return (
@@ -30,8 +30,9 @@ function App() {
 
             <Route path="/" element={<HomePage />} />
             <Route path="gamespage" element={<GamesPage />} />
-            <Route path='results' element={<ResultsPage />} />
-            <Route path='quiz' element={<QuizPage />} />
+            <Route path='quiz' element={<QuizPage/>}/>
+            <Route path='results' element={<ResultsPage/>}/>
+
 
 
           </Routes>

@@ -4,6 +4,12 @@ import { useHistory, useLocation } from "react-router-dom";
 // Components 
 import GamesList from '../components/GamesList';
 
+//MUI
+import { Box } from '@material-ui/core';
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText'
+
 function GamesPage() {
 
     const [games, setGames] = useState([]);
@@ -49,7 +55,6 @@ function GamesPage() {
 
         const response = await fetch(`https://api-nba-v1.p.rapidapi.com/games?date=${yearStr}-${monthStr}-${dayStr}`, options)
         const data = await response.json();
-        console.log(data.response);
         setGames(data.response);
         // .then(response => response.json())
         // .then(response => console.log(response))
@@ -60,16 +65,15 @@ function GamesPage() {
         loadGames();
     }, []);
 
-
     return (
         <>
-            <p>List of games</p>
-            <GamesList games={games}></GamesList>
-            {/* <p>GamesPage test</p>
-        <p>Date:{day}</p>
-        <p>Month:{month}</p>
-        <p>Year:{year}</p> */}
-
+        <Box sx={{ width: '100%', maxWidth: 1500, bgcolor: 'background.paper' }}>
+            <nav aria-label="main mailbox folders">
+                <List>
+                    <GamesList games={games}/>
+                </List>
+            </nav>
+        </Box>
         </>
     )
 };
