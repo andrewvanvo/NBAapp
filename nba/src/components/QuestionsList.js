@@ -56,13 +56,12 @@ function QuestionsList(props) {
         }
     ];
 
-    // function shuffleQuestions(questionsArray) {
-    //     for (let i = questionsArray.length - 1; i > 0; i--) {
-    //         const j = Math.floor(Math.random() * (i + 1));
-    //         [questionsArray[i], questionsArray[j]] = [questionsArray[j], questionsArray[i]];
-    //     }
-    // }
-    // shuffleQuestions(questions);
+    function shuffleAnswers(answersArray) {
+        for (let i = answersArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [answersArray[i], answersArray[j]] = [answersArray[j], answersArray[i]];
+        }
+    }
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
@@ -87,6 +86,8 @@ function QuestionsList(props) {
         }
 
     };
+    shuffleAnswers(questions[currentQuestion].options);
+    console.log(questions);
 
     return (
 
