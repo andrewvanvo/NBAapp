@@ -1,41 +1,45 @@
 import React, { useState } from 'react';
 
-function QuestionsList() {
-
+function QuestionsList(usablePlayers) {
+    // Choosing 4 players - currently, ends of array 
+    let player1 = usablePlayers[0]
+    let player2 = usablePlayers[1]
+    let player3 = usablePlayers[usablePlayers.length - 1]
+    let player4 = usablePlayers[usablePlayers.length - 2]
 
     const questions = [
         {
-            question: "How many points did Lebron James have this game?",
+            question: `How many points did ${player1.player.firstname} ${player1.player.lastname} have this game?`,
             options: [
-                { answer: "24", isCorrect: true },
+                { answer: player1.points, isCorrect: true },
                 { answer: "12", isCorrect: false },
                 { answer: "20", isCorrect: false },
                 { answer: "30", isCorrect: false }
             ]
         },
         {
-            question: "How many assists did Russell Westbrook have this game?",
+            question: `How many assists did ${player2.player.firstname} ${player2.player.lastname} have this game?`,
             options: [
                 { answer: "2", isCorrect: false },
                 { answer: "8", isCorrect: false },
-                { answer: "6", isCorrect: true },
+                { answer: player2.assists, isCorrect: true },
                 { answer: "30", isCorrect: false }
             ]
         },
         {
-            question: "How many rebounds did Dejounte Murray have this game?",
+            question: `How many rebounds did ${player3.player.firstname} ${player3.player.lastname} have this game?`,
             options: [
                 { answer: "12", isCorrect: false },
                 { answer: "5", isCorrect: false },
                 { answer: "2", isCorrect: false },
-                { answer: "15", isCorrect: true }
+                { answer: player3.totReb, isCorrect: true }
             ]
         },
         {
-            question: "How many steals did Keldon Johnson have this game?",
+            question: `How many steals did ${player4.player.firstname} ${player4.player.lastname} have this game?`,
             options: [
                 { answer: "2", isCorrect: false },
-                { answer: "1", isCorrect: true },
+                { answer: player4.steals, isCorrect: true },
                 { answer: "0", isCorrect: false },
                 { answer: "3", isCorrect: false }
             ]
