@@ -8,13 +8,6 @@ import Paper from '@material-ui/core/Paper'
 import { Typography } from '@material-ui/core';
 import { Box } from '@mui/material';
 
-
-//const useStyles = makeStyles({
-//  root:{
-//    
-//  }
-//})
-
 function HomePage() {
 
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -47,8 +40,6 @@ function HomePage() {
             </Paper>
           </Grid>
 
-
-    
           <Grid item xs={12} md={3}>
             <Link to='/gamespage' state={{ dateProp: selectedDate }} >Submit</Link>
           </Grid>
@@ -57,9 +48,6 @@ function HomePage() {
         </Paper>
       </Box>
       
-      
-
-    
   )
 }
 

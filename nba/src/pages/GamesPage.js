@@ -60,9 +60,7 @@ function GamesPage() {
         const response = await fetch(`https://api-nba-v1.p.rapidapi.com/games?date=${yearStr}-${monthStr}-${dayStr}`, options)
         const data = await response.json();
         setGames(data.response);
-        // .then(response => response.json())
-        // .then(response => console.log(response))
-        // .catch(err => console.error(err));
+        
     }
 
     useEffect(() => {
@@ -84,8 +82,6 @@ function GamesPage() {
             </Paper>
         </Box>
         
-
-
     )
 };
 

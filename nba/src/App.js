@@ -19,8 +19,6 @@ import DateFnsUtils from '@date-io/date-fns'
 //MUI
 import {ThemeProvider, createTheme} from '@material-ui/core/styles'
 
-
-
 //CSS 
 import './App.css';
 
@@ -32,31 +30,24 @@ function App() {
     }
   })
 
-
   return (
     <ThemeProvider theme={theme}>
       <div className='App'>
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
-        
           <BrowserRouter>
             <Routes>
-
 
               <Route path="/" element={<HomePage />} />
               <Route path="gamespage" element={<GamesPage />} />
               <Route path='quiz' element={<QuizPage />} />
               <Route path='results' element={<ResultsPage />} />
 
-
-
             </Routes>
           </BrowserRouter>
-        
       </MuiPickersUtilsProvider>
       </div>
     </ThemeProvider>
     
-
   )
 }
 
