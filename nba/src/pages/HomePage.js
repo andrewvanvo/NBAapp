@@ -5,12 +5,13 @@ import { KeyboardDatePicker } from '@material-ui/pickers'
 import Grid from '@material-ui/core/Grid'
 
 // .getMonth() is 0 based. Offset by +1 later for API call
+
+
 function HomePage() {
 
   const [selectedDate, setSelectedDate] = useState(new Date());
 
-  //let PropLink = selectedDate => <Link to='gamespage' {...selectedDate} />
-
+  const today = new Date()
 
 
   return (
@@ -27,6 +28,10 @@ function HomePage() {
             variant='static'
             autoOk='true'
             orientation='landscape'
+            disableFuture ='true'
+            maxDate = {today.setDate(today.getDate() - 1)}
+            
+            
           />
 
           <Link to='/gamespage' state={{ dateProp: selectedDate }} >Submit</Link>
