@@ -17,13 +17,14 @@ function QuizPage() {
     // let temp_game_id = 8133;
 
     const [game, setGame] = useState([]);
-    const [usablePlayers, setUsablePlayers] = useState([]);
+    const [isFetched, setFetched] = useState(false)
+    //const [usablePlayers, setUsablePlayers] = useState([]);
     // const history = useHistory();
     const options = {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com',
-            'X-RapidAPI-Key': '3d14fa2b63msh2bae5fd2125e0e3p16385fjsn756ac5ed2242'
+            'X-RapidAPI-Key': 'c8e4662a64msh6ac6252509bd635p188868jsnf61afa9ea2cc'
         }
     };
 
@@ -31,26 +32,45 @@ function QuizPage() {
 
         const response = await fetch(`https://api-nba-v1.p.rapidapi.com/players/statistics?game=${gameID}`, options)
         const data = await response.json();
+        //date.response = array of objects
+        
+
         setGame(data.response);
+        setFetched(true)
+
         // .then(response => response.json())
         // .then(response => console.log(response))
         // .catch(err => console.error(err));
         // Creating list of players that played more than 15 min
-        let tempUsablePlayers = [];
-        for (let person of game) {
-            let minutes = person.min;
-            minutes = parseInt(minutes);
-            if (minutes > 15) {
-                tempUsablePlayers.push(person);
-            }
-        }
-        console.log(game);
-        setUsablePlayers(tempUsablePlayers);
+
+    
+        //let tempUsablePlayers = [];
+        //for (let person of game) {
+        //    let minutes = person.min;
+        //    minutes = parseInt(minutes);
+        //    if (minutes > 15) {
+        //        tempUsablePlayers.push(person);
+        //    }
+        //}
+
+        //setUsablePlayers(data.response.);
     }
 
+    
     useEffect(() => {
         loadGame();
+
     }, []);
+
+
+    let usablePlayers = []
+        for (let player of game){
+            let minutes = player.min
+            minutes = parseInt(minutes)
+            if (minutes > 15){
+                usablePlayers.push(player)
+            }
+        }
 
 
     // Example response body to limit api calls
@@ -59,11 +79,15 @@ function QuizPage() {
     return (
         <div>
             <h1>List of Questions</h1>
-            <h2>{gameID}</h2>
-            <QuestionsList gameID={gameID} usablePlayers={game} />
+            <div>{isFetched ? <QuestionsList gameID={gameID} usablePlayers={usablePlayers}/> : 'Loading....'}</div>
+            
+            
         </div>
     );
 
 }
 
 export default QuizPage;
+//
+
+//

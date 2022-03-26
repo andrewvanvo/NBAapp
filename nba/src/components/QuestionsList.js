@@ -2,12 +2,18 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // function QuestionsList(props) {
-function QuestionsList(props, usablePlayers) {
+function QuestionsList(props) {
     // Choosing 4 players - currently, ends of array 
-    let player1 = usablePlayers[0]
-    let player2 = usablePlayers[1]
-    let player3 = usablePlayers[usablePlayers.length - 1]
-    let player4 = usablePlayers[usablePlayers.length - 2]
+
+
+    
+    let gameID = props.gameID
+    let playerArray = props.usablePlayers
+    
+    let player1 = playerArray[0]
+    let player2 = playerArray[1]
+    let player3 = playerArray[playerArray.length - 1]
+    let player4 = playerArray[playerArray.length - 2]
 
 
 
@@ -66,7 +72,7 @@ function QuestionsList(props, usablePlayers) {
             let path = '/results'
             navigate(path, {
                 state: {
-                    gameID: props.gameID,
+                    gameID: gameID,
                     score: score
                 }
             })
@@ -78,6 +84,7 @@ function QuestionsList(props, usablePlayers) {
     return (
 
         <>
+            <p>qlist comp</p>  
             <div className='question-section'>
                 <div className='question-count'>
                     <span>Question {currentQuestion + 1}</span>/{questions.length}
@@ -95,3 +102,5 @@ function QuestionsList(props, usablePlayers) {
 }
 
 export default QuestionsList
+
+

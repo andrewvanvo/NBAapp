@@ -26,9 +26,7 @@ function ResultsPage(){
     let location = useLocation()
     let gameID = location.state.gameID
     let score = location.state.score
-    console.log(gameID)
-    console.log(score)
-
+    
 
     const loadResults = async () => {
         const response = await fetch(`https://api-nba-v1.p.rapidapi.com/players/statistics?game=${gameID}`, options)
