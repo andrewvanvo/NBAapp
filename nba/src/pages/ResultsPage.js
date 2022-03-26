@@ -28,7 +28,6 @@ function ResultsPage(){
     let gameID = location.state.gameID
     let score = location.state.score
     
-
     const loadResults = async () => {
         const response = await fetch(`https://api-nba-v1.p.rapidapi.com/players/statistics?game=${gameID}`, options)
         const data = await response.json();
@@ -48,6 +47,7 @@ function ResultsPage(){
             <Box height='100vh'>
             <Paper>
                 <Grid container>
+
                     <Grid item>
                         <TriviaResults score={score}/>
                     </Grid>
@@ -55,6 +55,7 @@ function ResultsPage(){
                     <Grid item>
                         <MatchResultList results={results}/>
                     </Grid>
+
                 </Grid>
             </Paper>
             </Box>
@@ -62,7 +63,6 @@ function ResultsPage(){
         </>
     )
 }
-
 
 
 export default ResultsPage;

@@ -1,9 +1,5 @@
 import React from 'react'
-
 import TableCell from '@mui/material/TableCell';
-
-
-
 function PlayerMatchResult({result}){
 
     return(
@@ -25,5 +21,4 @@ function PlayerMatchResult({result}){
 
 }
     
-
 export default PlayerMatchResult
