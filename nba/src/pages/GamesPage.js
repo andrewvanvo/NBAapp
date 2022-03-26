@@ -69,16 +69,18 @@ function GamesPage() {
     }, []);
 
     return (
-
-        <Grid container spacing={2} justifyContent='center' alignItems='center'>
-            <Grid item xs={4} aligntItems='center'>
-                <Card>
-                    <List>
-                        <GamesList games={games} />
-                    </List>
-                </Card>
+        <Box height='100vh'>
+            <Grid container spacing={2} justifyContent='center' alignItems='center'>
+                <Grid item xs={4} aligntItems='center'>
+                    <Card>
+                        <List>
+                            <GamesList games={games} />
+                        </List>
+                    </Card>
+                </Grid>
             </Grid>
-        </Grid>
+        </Box>
+        
 
 
     )

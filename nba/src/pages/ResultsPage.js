@@ -44,9 +44,20 @@ function ResultsPage(){
 
     return(
         <>
-            <p>ResultsPageTest</p>
-            <TriviaResults score={score}/>
-            <MatchResultList results={results}/>
+            <Box height='100vh'>
+                <Grid container>
+                    <Grid item>
+                        <TriviaResults score={score}/>
+                    </Grid>
+
+                    <Grid item>
+                        <MatchResultList results={results}/>
+                    </Grid>
+                </Grid>
+            </Box>
+            
+            
+            
             
         </>
     )
