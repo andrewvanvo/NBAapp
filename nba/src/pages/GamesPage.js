@@ -38,20 +38,20 @@ function GamesPage() {
     let monthStr
     let yearStr = year.toString()
 
-    if (day >= 10){
+    if (day >= 10) {
         dayStr = day.toString()
-       
+
     } else {
         dayStr = day.toString()
-        dayStr = '0'+ dayStr
+        dayStr = '0' + dayStr
     }
 
-    if (month >= 10){
+    if (month >= 10) {
         monthStr = month.toString()
-        
-    } else{
+
+    } else {
         monthStr = month.toString()
-        monthStr = '0'+ monthStr
+        monthStr = '0' + monthStr
     }
 
     const loadGames = async () => {
@@ -69,18 +69,18 @@ function GamesPage() {
     }, []);
 
     return (
-        
-        <Grid container spacing ={2} justifyContent='center' alignItems='center'>
+
+        <Grid container spacing={2} justifyContent='center' alignItems='center'>
             <Grid item xs={4} aligntItems='center'>
                 <Card>
                     <List>
-                        <GamesList games={games}/>
+                        <GamesList games={games} />
                     </List>
-                </Card> 
+                </Card>
             </Grid>
         </Grid>
-        
-        
+
+
     )
 };
 
