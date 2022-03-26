@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useLocation } from 'react-router-dom';
 import MatchResultList from '../components/MatchResultList';
+import TriviaResults from '../components/TriviaResults';
 
 //MUI
 import Box from '@mui/material/Box';
@@ -46,6 +47,7 @@ function ResultsPage(){
     return(
         <>
             <p>ResultsPageTest</p>
+            <TriviaResults score={score}/>
             <MatchResultList results={results}/>
             
         </>
