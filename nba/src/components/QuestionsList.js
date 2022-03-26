@@ -6,10 +6,10 @@ function QuestionsList(props) {
     // Choosing 4 players - currently, ends of array 
 
 
-    
+
     let gameID = props.gameID
     let playerArray = props.usablePlayers
-    
+
     let player1 = playerArray[0]
     let player2 = playerArray[1]
     let player3 = playerArray[playerArray.length - 1]
@@ -56,6 +56,12 @@ function QuestionsList(props) {
         }
     ];
 
+    function shuffleAnswers(answersArray) {
+        for (let i = answersArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [answersArray[i], answersArray[j]] = [answersArray[j], answersArray[i]];
+        }
+    }
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
@@ -80,11 +86,13 @@ function QuestionsList(props) {
         }
 
     };
+    shuffleAnswers(questions[currentQuestion].options);
+    console.log(questions);
 
     return (
 
         <>
-            <p>qlist comp</p>  
+            <p>qlist comp</p>
             <div className='question-section'>
                 <div className='question-count'>
                     <span>Question {currentQuestion + 1}</span>/{questions.length}
