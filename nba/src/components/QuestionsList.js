@@ -5,18 +5,12 @@ import { useNavigate } from 'react-router-dom';
 function QuestionsList(props) {
     // Choosing 4 players - currently, ends of array 
 
+
+    
     let gameID = props.gameID
     let playerArray = props.usablePlayers
     
-    //REMVOE AFTER TESTING
-    console.log(playerArray)
-    
-
     let player1 = playerArray[0]
-
-    //REMOVE AFTER TESTING
-    console.log(player1)
-
     let player2 = playerArray[1]
     let player3 = playerArray[playerArray.length - 1]
     let player4 = playerArray[playerArray.length - 2]
@@ -78,7 +72,7 @@ function QuestionsList(props) {
             let path = '/results'
             navigate(path, {
                 state: {
-                    gameID: gameID.gameID,
+                    gameID: gameID,
                     score: score
                 }
             })

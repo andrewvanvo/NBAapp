@@ -17,6 +17,7 @@ function QuizPage() {
     // let temp_game_id = 8133;
 
     const [game, setGame] = useState([]);
+    const [isFetched, setFetched] = useState(false)
     //const [usablePlayers, setUsablePlayers] = useState([]);
     // const history = useHistory();
     const options = {
@@ -35,6 +36,7 @@ function QuizPage() {
         
 
         setGame(data.response);
+        setFetched(true)
 
         // .then(response => response.json())
         // .then(response => console.log(response))
@@ -77,7 +79,7 @@ function QuizPage() {
     return (
         <div>
             <h1>List of Questions</h1>
-            <p>{console.log(usablePlayers)}</p>
+            <div>{isFetched ? <QuestionsList gameID={gameID} usablePlayers={usablePlayers}/> : 'Loading....'}</div>
             
             
         </div>
@@ -86,6 +88,6 @@ function QuizPage() {
 }
 
 export default QuizPage;
-//<QuestionsList gameID={gameID} usablePlayers={usablePlayers} />
+//
 
 //
