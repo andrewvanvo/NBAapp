@@ -60,9 +60,9 @@ function QuizPage() {
         <div>
             <h1>List of Questions</h1>
             <h2>{gameID}</h2>
-            <QuestionsList usablePlayers={game}></QuestionsList>
+            <QuestionsList gameID={gameID} usablePlayers={game} />
         </div>
-    )
+    );
 
 }
 
