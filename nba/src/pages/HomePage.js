@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+//MUI
 import { KeyboardDatePicker } from '@material-ui/pickers'
 import Grid from '@material-ui/core/Grid'
+import { Typography } from '@material-ui/core';
 
 // .getMonth() is 0 based. Offset by +1 later for API call
+
 function HomePage() {
 
   const [selectedDate, setSelectedDate] = useState(new Date());
-
-  //let PropLink = selectedDate => <Link to='gamespage' {...selectedDate} />
-
-
+  const today = new Date()
 
   return (
     <>
       <br></br>
-
+      <p>Font Test</p>
+      <Typography variant ='h6'>Font Test</Typography>
       <Grid container spacing={2}>
         <Grid item xs={4}>
           <KeyboardDatePicker value={selectedDate} onChange={setSelectedDate}
@@ -27,10 +28,14 @@ function HomePage() {
             variant='static'
             autoOk='true'
             orientation='landscape'
+            disableFuture ='true'
+            maxDate = {today.setDate(today.getDate() - 1)}
+            
+            
           />
 
           <Link to='/gamespage' state={{ dateProp: selectedDate }} >Submit</Link>
-
+          
         </Grid>
       </Grid>
 
@@ -40,5 +45,3 @@ function HomePage() {
 }
 
 export default HomePage;
-
-//[selectedDate.getDate(),selectedDate.getMonth(),selectedDate.getFullYear()]

@@ -6,6 +6,8 @@ import { useHistory, useLocation } from "react-router-dom";
 import GamesList from '../components/GamesList';
 import QuestionsList from '../components/QuestionsList';
 import exampleGame from '../components/exampleGame';
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 function QuizPage() {
 
@@ -79,7 +81,7 @@ function QuizPage() {
     return (
         <div>
             <h1>List of Questions</h1>
-            <div>{isFetched ? <QuestionsList gameID={gameID} usablePlayers={usablePlayers}/> : 'Loading....'}</div>
+            <div>{isFetched ? <QuestionsList gameID={gameID} usablePlayers={usablePlayers}/> : <CircularProgress/>}</div>
             
             
         </div>
