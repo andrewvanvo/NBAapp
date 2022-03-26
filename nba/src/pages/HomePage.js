@@ -4,9 +4,16 @@ import { Link } from 'react-router-dom';
 //MUI
 import { KeyboardDatePicker } from '@material-ui/pickers'
 import Grid from '@material-ui/core/Grid'
+import Paper from '@material-ui/core/Paper'
 import { Typography } from '@material-ui/core';
+import { Box } from '@mui/material';
 
-// .getMonth() is 0 based. Offset by +1 later for API call
+
+//const useStyles = makeStyles({
+//  root:{
+//    
+//  }
+//})
 
 function HomePage() {
 
@@ -14,33 +21,43 @@ function HomePage() {
   const today = new Date()
 
   return (
-    <>
-      <br></br>
-      <p>Font Test</p>
-      <Typography variant ='h6'>Font Test</Typography>
-      <Grid container spacing={2}>
-        <Grid item xs={4}>
-          <KeyboardDatePicker value={selectedDate} onChange={setSelectedDate}
-            InputAdornmentProps={{ position: 'end' }}
-            label='Select Date'
-            inputVariant='outlined'
-            format='dd/MM/yyyy'
-            variant='static'
-            autoOk='true'
-            orientation='landscape'
-            disableFuture ='true'
-            maxDate = {today.setDate(today.getDate() - 1)}
-            
-            
-          />
+  
+      <Box height= '100vh'>
+        <Grid container direction='row' justifyContent='space-evenly' alignItems='center'>
+          <Grid item xs={12} md={3}>
+            <Paper>
+              <Typography>Ipsum Lorem</Typography>
+            </Paper>
+          </Grid>
 
-          <Link to='/gamespage' state={{ dateProp: selectedDate }} >Submit</Link>
-          
+          <Grid item xs={12} md={3}>
+            <Paper>
+              <KeyboardDatePicker value={selectedDate} onChange={setSelectedDate}
+                InputAdornmentProps={{ position: 'end' }}
+                label='Select Date'
+                inputVariant='outlined'
+                format='dd/MM/yyyy'
+                variant='static'
+                autoOk='true'
+                orientation='landscape'
+                disableFuture ='true'
+                maxDate = {today.setDate(today.getDate() - 1)}
+              />
+            </Paper>
+          </Grid>
+
+
+    
+          <Grid item xs={12} md={3}>
+            <Link to='/gamespage' state={{ dateProp: selectedDate }} >Submit</Link>
+          </Grid>
+
         </Grid>
-      </Grid>
+      </Box>
+      
+      
 
-
-    </>
+    
   )
 }
 

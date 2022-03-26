@@ -16,28 +16,46 @@ import ResultsPage from './pages/ResultsPage';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns'
 
+//MUI
+import {ThemeProvider, createTheme} from '@material-ui/core/styles'
+
+
+
 //CSS 
 import './App.css';
 
 function App() {
+
+  const theme = createTheme({
+    palette:{
+      type: 'dark'
+    }
+  })
+
+
   return (
-    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+    <ThemeProvider theme={theme}>
       <div className='App'>
-        <BrowserRouter>
-          <Routes>
+      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+        
+          <BrowserRouter>
+            <Routes>
 
 
-            <Route path="/" element={<HomePage />} />
-            <Route path="gamespage" element={<GamesPage />} />
-            <Route path='quiz' element={<QuizPage />} />
-            <Route path='results' element={<ResultsPage />} />
+              <Route path="/" element={<HomePage />} />
+              <Route path="gamespage" element={<GamesPage />} />
+              <Route path='quiz' element={<QuizPage />} />
+              <Route path='results' element={<ResultsPage />} />
 
 
 
-          </Routes>
-        </BrowserRouter>
+            </Routes>
+          </BrowserRouter>
+        
+      </MuiPickersUtilsProvider>
       </div>
-    </MuiPickersUtilsProvider>
+    </ThemeProvider>
+    
 
   )
 }
