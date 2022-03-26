@@ -11,6 +11,7 @@ import List from '@mui/material/List'
 import Grid from '@mui/material/Grid'
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText'
+import Paper from '@material-ui/core/Paper'
 
 function ResultsPage(){
 
@@ -45,6 +46,7 @@ function ResultsPage(){
     return(
         <>
             <Box height='100vh'>
+            <Paper>
                 <Grid container>
                     <Grid item>
                         <TriviaResults score={score}/>
@@ -54,10 +56,8 @@ function ResultsPage(){
                         <MatchResultList results={results}/>
                     </Grid>
                 </Grid>
+            </Paper>
             </Box>
-            
-            
-            
             
         </>
     )
