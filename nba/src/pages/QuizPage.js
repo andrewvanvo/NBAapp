@@ -5,7 +5,6 @@ import { useHistory, useLocation } from "react-router-dom";
 // Components 
 import GamesList from '../components/GamesList';
 import QuestionsList from '../components/QuestionsList';
-import exampleGame from '../components/exampleGame';
 import CircularProgress from '@mui/material/CircularProgress';
 
 //MUI

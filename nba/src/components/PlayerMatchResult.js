@@ -21,7 +21,6 @@ import { Typography } from '@mui/material';
 function PlayerMatchResult({ result }) {
 
     return (
-
         <>
             <TableCell component="th" scope="row">
                 <Typography sx={{ color: 'white' }}>
@@ -37,9 +36,6 @@ function PlayerMatchResult({ result }) {
             <TableCell align="right"><Typography sx={{ color: 'white' }}>{result.blocks ?? 0}</Typography></TableCell>
             <TableCell align="right"><Typography sx={{ color: 'white' }}>{result.min ?? 0}</Typography></TableCell>
         </>
-
-
-
 
     )
 
