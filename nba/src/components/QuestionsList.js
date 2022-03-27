@@ -94,12 +94,13 @@ function QuestionsList(props) {
         <>
             <p>qlist comp</p>
             <div className='question-section'>
+                <div className='question-text'>{questions[currentQuestion].question}</div>
+
+            </div>
+            <div className='answer-section'>
                 <div className='question-count'>
                     <span>Question {currentQuestion + 1}</span>/{questions.length}
                 </div>
-                <div className='question-text'>{questions[currentQuestion].question}</div>
-            </div>
-            <div className='answer-section'>
                 {questions[currentQuestion].options.map((option, index) => (
                     <button onClick={() => handleClickAnswer(option.isCorrect)}>{option.answer}</button>
                 ))}

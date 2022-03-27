@@ -28,6 +28,28 @@
   color: #61dafb;
 }
 
+.question-section {
+  margin: 7px;
+  font-size: medium;
+}
+
+.question-count {
+  margin: 2px;
+  font-size: small;
+}
+
+button {
+  border-radius: 4px;
+  padding: 12px 28px;
+  font-size: 12px;
+  background-color: #8CB6CF;
+}
+
+button:hover {
+  background-color: #78C2EF;
+  color: white;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

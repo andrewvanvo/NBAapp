@@ -33,7 +33,7 @@ function QuizPage() {
         const response = await fetch(`https://api-nba-v1.p.rapidapi.com/players/statistics?game=${gameID}`, options)
         const data = await response.json();
         //date.response = array of objects
-        
+
 
         setGame(data.response);
         setFetched(true)
@@ -43,7 +43,7 @@ function QuizPage() {
         // .catch(err => console.error(err));
         // Creating list of players that played more than 15 min
 
-    
+
         //let tempUsablePlayers = [];
         //for (let person of game) {
         //    let minutes = person.min;
@@ -56,7 +56,7 @@ function QuizPage() {
         //setUsablePlayers(data.response.);
     }
 
-    
+
     useEffect(() => {
         loadGame();
 
@@ -64,13 +64,13 @@ function QuizPage() {
 
 
     let usablePlayers = []
-        for (let player of game){
-            let minutes = player.min
-            minutes = parseInt(minutes)
-            if (minutes > 15){
-                usablePlayers.push(player)
-            }
+    for (let player of game) {
+        let minutes = player.min
+        minutes = parseInt(minutes)
+        if (minutes > 15) {
+            usablePlayers.push(player)
         }
+    }
 
 
     // Example response body to limit api calls
@@ -78,10 +78,10 @@ function QuizPage() {
 
     return (
         <div>
-            <h1>List of Questions</h1>
-            <div>{isFetched ? <QuestionsList gameID={gameID} usablePlayers={usablePlayers}/> : 'Loading....'}</div>
-            
-            
+            <h1>Questions</h1>
+            <div>{isFetched ? <QuestionsList gameID={gameID} usablePlayers={usablePlayers} /> : 'Loading....'}</div>
+
+
         </div>
     );
 
