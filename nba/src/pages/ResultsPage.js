@@ -16,6 +16,7 @@ import ListItemText from '@mui/material/ListItemText'
 import Paper from '@material-ui/core/Paper'
 import { CardContent } from '@material-ui/core';
 import { Typography } from '@mui/material';
+import Button from '@mui/material/Button';
 
 
 function ResultsPage(){
@@ -56,6 +57,8 @@ function ResultsPage(){
                             <Card>
                                 <CardContent>
                                     <TriviaResults score={score}/>
+                                    <br></br>
+                                    <Button variant="contained" href="/">Play Again</Button>
                                 </CardContent>
                             </Card>
                         </Paper>
