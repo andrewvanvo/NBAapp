@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useLocation } from 'react-router-dom';
+
+//Components
 import MatchResultList from '../components/MatchResultList';
 import TriviaResults from '../components/TriviaResults';
 
@@ -11,6 +13,10 @@ import List from '@mui/material/List'
 import Grid from '@mui/material/Grid'
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText'
+import Paper from '@material-ui/core/Paper'
+import { CardContent } from '@material-ui/core';
+
+
 
 function ResultsPage(){
 
@@ -27,7 +33,6 @@ function ResultsPage(){
     let gameID = location.state.gameID
     let score = location.state.score
     
-
     const loadResults = async () => {
         const response = await fetch(`https://api-nba-v1.p.rapidapi.com/players/statistics?game=${gameID}`, options)
         const data = await response.json();
@@ -44,14 +49,35 @@ function ResultsPage(){
 
     return(
         <>
-            <p>ResultsPageTest</p>
-            <TriviaResults score={score}/>
-            <MatchResultList results={results}/>
+            <Box height='100vh'>
+                <Grid container direction = 'column'>
+                    <Grid item aligntItems='center'>
+                        <Paper>
+                            <Card>
+                                <CardContent>
+                                    <TriviaResults score={score}/>
+                                </CardContent>
+                            </Card>
+                        </Paper>
+                    </Grid>
+
+                    <Grid item alignItems ='center'>
+                        <Paper>
+                            <Card>
+                                <CardContent>
+                                    <List>
+                                        <MatchResultList results={results}/>
+                                    </List>
+                                </CardContent>
+                            </Card>
+                        </Paper>
+                    </Grid>
+                </Grid>
+            </Box>
             
         </>
     )
 }
-
 
 
 export default ResultsPage;

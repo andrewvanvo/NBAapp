@@ -11,14 +11,12 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
 
-
 export default function MatchResultList ({results}){
-    
     
     return(
         <>
-            <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableContainer>
+                <Table>
                   <TableHead>
                     <TableRow>
                       <TableCell>Player</TableCell>
@@ -42,9 +40,6 @@ export default function MatchResultList ({results}){
                 </Table>
             </TableContainer>
 
-
-           
-         
         </>
     )
 }

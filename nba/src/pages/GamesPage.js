@@ -12,6 +12,8 @@ import List from '@mui/material/List'
 import Grid from '@mui/material/Grid'
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText'
+import Paper from '@material-ui/core/Paper'
+import { CardContent } from '@material-ui/core';
 
 function GamesPage() {
 
@@ -59,9 +61,7 @@ function GamesPage() {
         const response = await fetch(`https://api-nba-v1.p.rapidapi.com/games?date=${yearStr}-${monthStr}-${dayStr}`, options)
         const data = await response.json();
         setGames(data.response);
-        // .then(response => response.json())
-        // .then(response => console.log(response))
-        // .catch(err => console.error(err));
+        
     }
 
     useEffect(() => {
@@ -69,18 +69,22 @@ function GamesPage() {
     }, []);
 
     return (
-
-        <Grid container spacing={2} justifyContent='center' alignItems='center'>
-            <Grid item xs={4} aligntItems='center'>
-                <Card>
-                    <List>
-                        <GamesList games={games} />
-                    </List>
-                </Card>
+        <Box height='100vh'>
+            <Grid container spacing={2} justifyContent='center' alignItems='center'>
+                <Grid item xs={4} aligntItems='center'>
+                    <Paper>
+                        <Card>
+                            <CardContent>
+                                <List>
+                                    <GamesList games={games} />
+                                </List>
+                            </CardContent>
+                        </Card>
+                    </Paper>
+                </Grid>
             </Grid>
-        </Grid>
-
-
+        </Box>
+        
     )
 };
 
