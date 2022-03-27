@@ -18,32 +18,32 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { Typography } from '@mui/material';
 
-function PlayerMatchResult({result}){
+function PlayerMatchResult({ result }) {
 
     return (
-        
-            <>
-                <TableCell component="th" scope="row">
-                    <Typography sx={{color: 'white'}}>
-                        {result.player.firstname} {result.player.lastname}
-                    </Typography>
-                </TableCell>
-                <TableCell align="right"><Typography sx={{color: 'white'}}>{result.team.name}</Typography></TableCell>
-                <TableCell align="right"><Typography sx={{color: 'white'}}>{result.points ?? 0}</Typography></TableCell>
-                <TableCell align="right"><Typography sx={{color: 'white'}}>{result.assists ?? 0}</Typography></TableCell>
-                <TableCell align="right"><Typography sx={{color: 'white'}}>{result.totreb ?? 0}</Typography></TableCell>
-                <TableCell align="right"><Typography sx={{color: 'white'}}>{result.steals ?? 0}</Typography></TableCell>
-                <TableCell align="right"><Typography sx={{color: 'white'}}>{result.turnovers ?? 0}</Typography></TableCell>
-                <TableCell align="right"><Typography sx={{color: 'white'}}>{result.blocks ?? 0}</Typography></TableCell>
-                <TableCell align="right"><Typography sx={{color: 'white'}}>{result.min ?? 0}</Typography></TableCell>
-            </>
-                
-                        
-                    
-        
+
+        <>
+            <TableCell component="th" scope="row">
+                <Typography sx={{ color: 'white' }}>
+                    {result.player.firstname} {result.player.lastname}
+                </Typography>
+            </TableCell>
+            <TableCell align="right"><Typography sx={{ color: 'white' }}>{result.team.name}</Typography></TableCell>
+            <TableCell align="right"><Typography sx={{ color: 'white' }}>{result.points ?? 0}</Typography></TableCell>
+            <TableCell align="right"><Typography sx={{ color: 'white' }}>{result.assists ?? 0}</Typography></TableCell>
+            <TableCell align="right"><Typography sx={{ color: 'white' }}>{result.totReb ?? 0}</Typography></TableCell>
+            <TableCell align="right"><Typography sx={{ color: 'white' }}>{result.steals ?? 0}</Typography></TableCell>
+            <TableCell align="right"><Typography sx={{ color: 'white' }}>{result.turnovers ?? 0}</Typography></TableCell>
+            <TableCell align="right"><Typography sx={{ color: 'white' }}>{result.blocks ?? 0}</Typography></TableCell>
+            <TableCell align="right"><Typography sx={{ color: 'white' }}>{result.min ?? 0}</Typography></TableCell>
+        </>
+
+
+
+
     )
-        
+
 
 };
-    
+
 export default PlayerMatchResult
