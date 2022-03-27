@@ -16,6 +16,7 @@ import TableBody from '@mui/material/TableBody';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import { Typography } from '@mui/material';
 
 function PlayerMatchResult({result}){
 
@@ -23,16 +24,18 @@ function PlayerMatchResult({result}){
         
             <>
                 <TableCell component="th" scope="row">
-                {result.player.firstname} {result.player.lastname}
+                    <Typography sx={{color: 'white'}}>
+                        {result.player.firstname} {result.player.lastname}
+                    </Typography>
                 </TableCell>
-                <TableCell align="right">{result.team.name}</TableCell>
-                <TableCell align="right">{result.points ?? 0}</TableCell>
-                <TableCell align="right">{result.assists ?? 0}</TableCell>
-                <TableCell align="right">{result.totreb ?? 0}</TableCell>
-                <TableCell align="right">{result.steals ?? 0}</TableCell>
-                <TableCell align="right">{result.turnovers ?? 0}</TableCell>
-                <TableCell align="right">{result.blocks ?? 0}</TableCell>
-                <TableCell align="right">{result.min ?? 0}</TableCell>
+                <TableCell align="right"><Typography sx={{color: 'white'}}>{result.team.name}</Typography></TableCell>
+                <TableCell align="right"><Typography sx={{color: 'white'}}>{result.points ?? 0}</Typography></TableCell>
+                <TableCell align="right"><Typography sx={{color: 'white'}}>{result.assists ?? 0}</Typography></TableCell>
+                <TableCell align="right"><Typography sx={{color: 'white'}}>{result.totreb ?? 0}</Typography></TableCell>
+                <TableCell align="right"><Typography sx={{color: 'white'}}>{result.steals ?? 0}</Typography></TableCell>
+                <TableCell align="right"><Typography sx={{color: 'white'}}>{result.turnovers ?? 0}</Typography></TableCell>
+                <TableCell align="right"><Typography sx={{color: 'white'}}>{result.blocks ?? 0}</Typography></TableCell>
+                <TableCell align="right"><Typography sx={{color: 'white'}}>{result.min ?? 0}</Typography></TableCell>
             </>
                 
                         

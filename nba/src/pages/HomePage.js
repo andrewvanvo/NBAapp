@@ -15,15 +15,21 @@ function HomePage() {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const today = new Date()
 
+
+
   return (
   
       <Box height= '100vh'>
-        <Grid container direction='row' justifyContent='space-evenly' alignItems='center'>
+        <Grid container direction='row' justifyContent='space-evenly'alignItems='center'>
           <Grid item xs={12} md={3}>
             <Paper>
               <Card>
                 <CardContent>
-                  <Typography>Ipsum Lorem</Typography>  
+                  <Typography variant='h4'>NBA Quiz</Typography>
+                  <Typography>Check to see how well you know stats from an NBA game of your choice.</Typography>
+                  <Typography>Step 1: Select a game date</Typography>
+                  <Typography>Step 2: Select a match</Typography>    
+                  <Typography>Step 3: Give your best answers</Typography>        
                 </CardContent>
                 </Card>
             </Paper>
@@ -41,7 +47,7 @@ function HomePage() {
                     format='dd/MM/yyyy'
                     variant='static'
                     autoOk='true'
-                    orientation='landscape'
+                    orientation='portrait'
                     disableFuture ='true'
                     maxDate = {today.setDate(today.getDate() - 1)}
                   />
@@ -54,7 +60,7 @@ function HomePage() {
             <Paper>
               <Card>
                 <CardContent>
-                  <Link to='/gamespage' state={{ dateProp: selectedDate }} >Submit</Link>
+                  <Link to='/gamespage' style={{ color: '#FFF' }} state={{ dateProp: selectedDate }} >NEXT STEP</Link>
                 </CardContent>
               </Card>
             </Paper>

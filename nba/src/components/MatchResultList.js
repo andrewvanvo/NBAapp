@@ -17,6 +17,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import { Typography } from '@mui/material';
 
 
 
@@ -28,15 +29,20 @@ export default function MatchResultList ({results}){
                   <Table>
                     <TableHead>
                       <TableRow>
-                        <TableCell>Player</TableCell>
-                        <TableCell align="right">Team</TableCell>
-                        <TableCell align="right">Points</TableCell>
-                        <TableCell align="right">Assists</TableCell>
-                        <TableCell align="right">Total Rebounds</TableCell>
-                        <TableCell align="right">Steals</TableCell>
-                        <TableCell align="right">Turnovers</TableCell>
-                        <TableCell align="right">Blocks</TableCell>
-                        <TableCell align="right">Minutes Played</TableCell>
+                        <TableCell>
+                          <Typography sx={{color: 'white'}}>MATCH RESULTS</Typography>
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell><Typography sx={{color: 'white'}}>Player</Typography></TableCell>
+                        <TableCell align="right"><Typography sx={{color: 'white'}}>Team</Typography></TableCell>
+                        <TableCell align="right"><Typography sx={{color: 'white'}}>Points</Typography></TableCell>
+                        <TableCell align="right"><Typography sx={{color: 'white'}}>Assists</Typography></TableCell>
+                        <TableCell align="right"><Typography sx={{color: 'white'}}>Total Rebounds</Typography></TableCell>
+                        <TableCell align="right"><Typography sx={{color: 'white'}}>Steals</Typography></TableCell>
+                        <TableCell align="right"><Typography sx={{color: 'white'}}>Turnovers</Typography></TableCell>
+                        <TableCell align="right"><Typography sx={{color: 'white'}}>Blocks</Typography></TableCell>
+                        <TableCell align="right"><Typography sx={{color: 'white'}}>Minutes Played</Typography></TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
