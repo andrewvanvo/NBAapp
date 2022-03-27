@@ -56,11 +56,11 @@ function HomePage() {
             </Paper>
           </Grid>
 
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} md={3} style={{width: '10%'}}>
             <Paper>
               <Card>
                 <CardContent>
-                  <Link to='/gamespage' style={{ color: '#FFF' }} state={{ dateProp: selectedDate }} >NEXT STEP</Link>
+                  <Link to='/gamespage' style={{ color: '#FFF' }} state={{ dateProp: selectedDate }} >PICK THE MATCHUP</Link>
                 </CardContent>
               </Card>
             </Paper>
