@@ -89,15 +89,15 @@ function QuizPage() {
     // let example = exampleGame;
 
     return (
-        
 
-        <Box height= '100vh'>
+
+        <Box height='100vh'>
             <Grid container direction='column'>
-                <Grid item md = {3}>
+                <Grid item md={3}>
                     <Paper>
                         <Card>
                             <CardContent>
-                                {isFetched ? <QuestionsList gameID={gameID} usablePlayers={usablePlayers}/> : <CircularProgress/>}
+                                {isFetched ? <QuestionsList gameID={gameID} usablePlayers={usablePlayers} /> : <CircularProgress />}
                             </CardContent>
                         </Card>
                     </Paper>
