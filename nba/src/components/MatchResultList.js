@@ -21,21 +21,24 @@ import { Typography } from '@mui/material';
 
 
 
+
 export default function MatchResultList ({results}){
+
+
     
     return(
               
-                <TableContainer component={Paper}>
+                <TableContainer component={Paper} style={{maxHeight: '100vh'}}>
                   <Table>
-                    <TableHead>
+                    <TableHead >
                       <TableRow>
                         <TableCell colspan="9" style={{ "text-align": "center" }}>
                           <Typography sx={{color: 'white'}}>MATCH RESULTS</Typography>
                         </TableCell>
                       </TableRow>
-                      <TableRow>
+                      <TableRow >
                         <TableCell><Typography sx={{color: 'white'}}>Player</Typography></TableCell>
-                        <TableCell align="right"><Typography sx={{color: 'white'}}>Team</Typography></TableCell>
+                        <TableCell align="right" ><Typography sx={{color: 'white'}}>Team</Typography></TableCell>
                         <TableCell align="right"><Typography sx={{color: 'white'}}>Points</Typography></TableCell>
                         <TableCell align="right"><Typography sx={{color: 'white'}}>Assists</Typography></TableCell>
                         <TableCell align="right"><Typography sx={{color: 'white'}}>Total Rebounds</Typography></TableCell>

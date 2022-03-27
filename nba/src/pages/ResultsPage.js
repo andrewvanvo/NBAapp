@@ -51,9 +51,9 @@ function ResultsPage(){
     return(
         <>
             <Box height='100vh'>
-                <Grid container direction = 'column'>
-                    <Grid item aligntItems='center'>
-                        <Paper>
+                <Grid container direction = 'column' justifyContent='space-evenly' alignItems='center' maxHeight='100vh'>
+                    <Grid item aligntItems='center' style={{width: '10%'}}>
+                        
                             <Card>
                                 <CardContent>
                                     <TriviaResults score={score}/>
@@ -61,11 +61,16 @@ function ResultsPage(){
                                     <Button variant="contained" href="/">Play Again</Button>
                                 </CardContent>
                             </Card>
-                        </Paper>
+                        
                     </Grid>
-
-                    <Grid item alignItems ='center'>
-                        <MatchResultList results={results}/>         
+                    <br></br>
+                    <Grid item alignItems ='center' style={{width: '50%'}}>
+                        <Card>
+                            <CardContent>
+                                <MatchResultList results={results}/>
+                            </CardContent>
+                        </Card>
+                                 
                     </Grid>
                 </Grid>
             </Box>
