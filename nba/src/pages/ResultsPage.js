@@ -62,15 +62,7 @@ function ResultsPage(){
                     </Grid>
 
                     <Grid item alignItems ='center'>
-                        <Paper>
-                            <Card>
-                                <CardContent>
-                                    <List>
-                                        <MatchResultList results={results}/>
-                                    </List>
-                                </CardContent>
-                            </Card>
-                        </Paper>
+                        <MatchResultList results={results}/>         
                     </Grid>
                 </Grid>
             </Box>
