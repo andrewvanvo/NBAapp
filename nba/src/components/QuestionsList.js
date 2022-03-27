@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+// MUI 
+import { Button } from '@mui/material';
+
 function QuestionsList(props) {
     // Choosing 4 players - currently, ends of array 
 
@@ -99,7 +102,8 @@ function QuestionsList(props) {
                     <span>Question {currentQuestion + 1}</span>/{questions.length}
                 </div>
                 {questions[currentQuestion].options.map((option, index) => (
-                    <button onClick={() => handleClickAnswer(option.isCorrect)}>{option.answer}</button>
+                    // <button onClick={() => handleClickAnswer(option.isCorrect)}>{option.answer}</button>
+                    <Button variant="contained" onClick={() => handleClickAnswer(option.isCorrect)}>{option.answer}</Button>
                 ))}
             </div>
 

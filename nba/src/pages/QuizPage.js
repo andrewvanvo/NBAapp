@@ -90,21 +90,13 @@ function QuizPage() {
     // let example = exampleGame;
 
     return (
-        <div>
-            <h1>Questions</h1>
-            <div>{isFetched ? <QuestionsList gameID={gameID} usablePlayers={usablePlayers} /> : 'Loading....'}</div>
-
-
-        </div>
-=======
-
-        <Box height= '100vh'>
+        <Box height='100vh'>
             <Grid container direction='column'>
-                <Grid item md = {3}>
+                <Grid item md={3}>
                     <Paper>
                         <Card>
                             <CardContent>
-                                {isFetched ? <QuestionsList gameID={gameID} usablePlayers={usablePlayers}/> : <CircularProgress/>}
+                                {isFetched ? <QuestionsList gameID={gameID} usablePlayers={usablePlayers} /> : <CircularProgress />}
                             </CardContent>
                         </Card>
                     </Paper>
