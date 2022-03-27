@@ -8,6 +8,17 @@ import QuestionsList from '../components/QuestionsList';
 import exampleGame from '../components/exampleGame';
 import CircularProgress from '@mui/material/CircularProgress';
 
+//MUI
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container'
+import Card from '@mui/material/Card'
+import List from '@mui/material/List'
+import Grid from '@mui/material/Grid'
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText'
+import Paper from '@material-ui/core/Paper'
+import { CardContent } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
 function QuizPage() {
 
@@ -79,12 +90,20 @@ function QuizPage() {
     // let example = exampleGame;
 
     return (
-        <div>
-            <h1>List of Questions</h1>
-            <div>{isFetched ? <QuestionsList gameID={gameID} usablePlayers={usablePlayers}/> : <CircularProgress/>}</div>
-            
-            
-        </div>
+
+        <Box height= '100vh'>
+            <Grid container direction='column'>
+                <Grid item md = {3}>
+                    <Paper>
+                        <Card>
+                            <CardContent>
+                                {isFetched ? <QuestionsList gameID={gameID} usablePlayers={usablePlayers}/> : <CircularProgress/>}
+                            </CardContent>
+                        </Card>
+                    </Paper>
+                </Grid>
+            </Grid>
+        </Box>
     );
 
 }

@@ -13,6 +13,7 @@ import Grid from '@mui/material/Grid'
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText'
 import Paper from '@material-ui/core/Paper'
+import { CardContent } from '@material-ui/core';
 
 function GamesPage() {
 
@@ -71,11 +72,15 @@ function GamesPage() {
         <Box height='100vh'>
             <Grid container spacing={2} justifyContent='center' alignItems='center'>
                 <Grid item xs={4} aligntItems='center'>
-                    <Card>
-                        <List>
-                            <GamesList games={games} />
-                        </List>
-                    </Card>
+                    <Paper>
+                        <Card>
+                            <CardContent>
+                                <List>
+                                    <GamesList games={games} />
+                                </List>
+                            </CardContent>
+                        </Card>
+                    </Paper>
                 </Grid>
             </Grid>
         </Box>

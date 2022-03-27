@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useLocation } from 'react-router-dom';
+
+//Components
 import MatchResultList from '../components/MatchResultList';
 import TriviaResults from '../components/TriviaResults';
 
@@ -12,6 +14,9 @@ import Grid from '@mui/material/Grid'
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText'
 import Paper from '@material-ui/core/Paper'
+import { CardContent } from '@material-ui/core';
+
+
 
 function ResultsPage(){
 
@@ -45,16 +50,28 @@ function ResultsPage(){
     return(
         <>
             <Box height='100vh'>
-                <Grid container>
-
-                    <Grid item>
-                        <TriviaResults score={score}/>
+                <Grid container direction = 'column'>
+                    <Grid item aligntItems='center'>
+                        <Paper>
+                            <Card>
+                                <CardContent>
+                                    <TriviaResults score={score}/>
+                                </CardContent>
+                            </Card>
+                        </Paper>
                     </Grid>
 
-                    <Grid item>
-                        <MatchResultList results={results}/>
+                    <Grid item alignItems ='center'>
+                        <Paper>
+                            <Card>
+                                <CardContent>
+                                    <List>
+                                        <MatchResultList results={results}/>
+                                    </List>
+                                </CardContent>
+                            </Card>
+                        </Paper>
                     </Grid>
-
                 </Grid>
             </Box>
             
