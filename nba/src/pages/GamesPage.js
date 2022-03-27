@@ -69,7 +69,6 @@ function GamesPage() {
 
     return (
         <Box height='100vh'>
-            <Paper>
             <Grid container spacing={2} justifyContent='center' alignItems='center'>
                 <Grid item xs={4} aligntItems='center'>
                     <Card>
@@ -79,7 +78,6 @@ function GamesPage() {
                     </Card>
                 </Grid>
             </Grid>
-            </Paper>
         </Box>
         
     )
