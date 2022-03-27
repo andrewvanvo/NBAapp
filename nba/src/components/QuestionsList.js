@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
+
 function QuestionsList(props) {
     // Choosing 4 players - currently, ends of array 
 
@@ -97,9 +98,9 @@ function QuestionsList(props) {
 
             <div className='question-section'>
                 <div className='question-text'>{questions[currentQuestion].question}</div>
-
             </div>
             <br></br>
+
                 <div className='question-count'>
                     <span>Question {currentQuestion + 1}</span>/{questions.length}
                 </div>
