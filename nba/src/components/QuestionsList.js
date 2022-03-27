@@ -18,43 +18,77 @@ function QuestionsList(props) {
     let player3 = playerArray[playerArray.length - 1]
     let player4 = playerArray[playerArray.length - 2]
 
+    // Next three functions give other answer options 
+    function answerOne(correctAnswer) {
+        let newAnswer = correctAnswer + 2;
+        return newAnswer.toString();
+    };
 
+    function answerTwo(correctAnswer, firstAnswer) {
+        let newAnswer = 0;
+        if (correctAnswer == 0) {
+            newAnswer = 5;
+        } else if (correctAnswer - 3 < 0) {
+            newAnswer = 3;
+        } else {
+            newAnswer = correctAnswer - 3;
+        }
+        while (newAnswer == firstAnswer || newAnswer == correctAnswer) {
+            newAnswer += 1;
+        }
+        return newAnswer.toString();
+    };
+
+    function answerThree(correctAnswer, firstAnswer, secondAnswer) {
+        let newAnswer = 0;
+        if (correctAnswer == 0) {
+            newAnswer = 7;
+        } else if (correctAnswer - 6 < 0) {
+            newAnswer = 6;
+        } else {
+            newAnswer = correctAnswer - 6;
+        }
+        while (newAnswer == firstAnswer || newAnswer == correctAnswer || newAnswer == secondAnswer) {
+            newAnswer += 1;
+        }
+        return newAnswer.toString();
+    };
 
     const questions = [
         {
             question: `How many points did ${player1.player.firstname} ${player1.player.lastname} have this game?`,
             options: [
                 { answer: player1.points, isCorrect: true },
-                { answer: "12", isCorrect: false },
-                { answer: "20", isCorrect: false },
-                { answer: "30", isCorrect: false }
+                { answer: answerOne(parseInt(player1.points)), isCorrect: false },
+                { answer: answerTwo(parseInt(player1.points), answerOne(parseInt(player1.points))), isCorrect: false },
+                { answer: answerThree(parseInt(player1.points), answerTwo(parseInt(player1.points), answerOne(parseInt(player1.points)))), isCorrect: false }
             ]
         },
         {
             question: `How many assists did ${player2.player.firstname} ${player2.player.lastname} have this game?`,
             options: [
-                { answer: "2", isCorrect: false },
-                { answer: "8", isCorrect: false },
+                { answer: answerOne(parseInt(player2.assists)), isCorrect: false },
+                { answer: answerTwo(parseInt(player2.assists), answerOne(parseInt(player2.assists))), isCorrect: false },
                 { answer: player2.assists, isCorrect: true },
-                { answer: "30", isCorrect: false }
+                { answer: answerThree(parseInt(player2.assists), answerTwo(parseInt(player2.assists), answerOne(parseInt(player2.assists)))), isCorrect: false }
             ]
         },
         {
             question: `How many rebounds did ${player3.player.firstname} ${player3.player.lastname} have this game?`,
             options: [
-                { answer: "12", isCorrect: false },
-                { answer: "5", isCorrect: false },
-                { answer: "2", isCorrect: false },
+                { answer: answerOne(parseInt(player3.totReb)), isCorrect: false },
+                { answer: answerTwo(parseInt(player3.totReb), answerOne(parseInt(player3.totReb))), isCorrect: false },
+                { answer: answerThree(parseInt(player3.totReb), answerTwo(parseInt(player3.totReb), answerOne(parseInt(player3.totReb)))), isCorrect: false },
                 { answer: player3.totReb, isCorrect: true }
             ]
         },
         {
             question: `How many steals did ${player4.player.firstname} ${player4.player.lastname} have this game?`,
             options: [
-                { answer: "2", isCorrect: false },
+                { answer: answerOne(parseInt(player3.steals)), isCorrect: false },
                 { answer: player4.steals, isCorrect: true },
-                { answer: "0", isCorrect: false },
-                { answer: "3", isCorrect: false }
+                { answer: answerTwo(parseInt(player3.steals), answerOne(parseInt(player3.steals))), isCorrect: false },
+                { answer: answerThree(parseInt(player3.steals), answerTwo(parseInt(player3.steals), answerOne(parseInt(player3.steals)))), isCorrect: false }
             ]
         }
     ];
@@ -101,18 +135,18 @@ function QuestionsList(props) {
             </div>
             <br></br>
 
-                <div className='question-count'>
-                    <span>Question {currentQuestion + 1}</span>/{questions.length}
-                </div>
+            <div className='question-count'>
+                <span>Question {currentQuestion + 1}</span>/{questions.length}
+            </div>
 
-                <br></br>
-                <ButtonGroup variant='contained'>
-                    {questions[currentQuestion].options.map((option, index) => (
-                        <Button onClick={() => handleClickAnswer(option.isCorrect)}>{option.answer}</Button> 
-                    ))}
-                </ButtonGroup>
-                
-           
+            <br></br>
+            <ButtonGroup variant='contained'>
+                {questions[currentQuestion].options.map((option, index) => (
+                    <Button onClick={() => handleClickAnswer(option.isCorrect)}>{option.answer}</Button>
+                ))}
+            </ButtonGroup>
+
+
         </>
     )
 }
