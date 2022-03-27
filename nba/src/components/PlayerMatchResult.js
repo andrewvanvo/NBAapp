@@ -31,7 +31,7 @@ function PlayerMatchResult({result}){
                 <TableCell align="right"><Typography sx={{color: 'white'}}>{result.team.name}</Typography></TableCell>
                 <TableCell align="right"><Typography sx={{color: 'white'}}>{result.points ?? 0}</Typography></TableCell>
                 <TableCell align="right"><Typography sx={{color: 'white'}}>{result.assists ?? 0}</Typography></TableCell>
-                <TableCell align="right"><Typography sx={{color: 'white'}}>{result.totreb ?? 0}</Typography></TableCell>
+                <TableCell align="right"><Typography sx={{color: 'white'}}>{result.totReb ?? 0}</Typography></TableCell>
                 <TableCell align="right"><Typography sx={{color: 'white'}}>{result.steals ?? 0}</Typography></TableCell>
                 <TableCell align="right"><Typography sx={{color: 'white'}}>{result.turnovers ?? 0}</Typography></TableCell>
                 <TableCell align="right"><Typography sx={{color: 'white'}}>{result.blocks ?? 0}</Typography></TableCell>

@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+//MUI
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import ButtonGroup from '@mui/material/ButtonGroup';
+
 function QuestionsList(props) {
     // Choosing 4 players - currently, ends of array 
 
@@ -94,15 +99,19 @@ function QuestionsList(props) {
                 <div className='question-text'>{questions[currentQuestion].question}</div>
 
             </div>
-            <div className='answer-section'>
+            <br></br>
                 <div className='question-count'>
                     <span>Question {currentQuestion + 1}</span>/{questions.length}
                 </div>
-                {questions[currentQuestion].options.map((option, index) => (
-                    <button onClick={() => handleClickAnswer(option.isCorrect)}>{option.answer}</button>
-                ))}
-            </div>
 
+                <br></br>
+                <ButtonGroup variant='contained'>
+                    {questions[currentQuestion].options.map((option, index) => (
+                        <Button onClick={() => handleClickAnswer(option.isCorrect)}>{option.answer}</Button> 
+                    ))}
+                </ButtonGroup>
+                
+           
         </>
     )
 }
