@@ -92,8 +92,8 @@ function QuizPage() {
 
 
         <Box height='100vh'>
-            <Grid container direction='column'>
-                <Grid item md={3}>
+            <Grid container direction='column' justifyContent='center' alignItems='center'>
+                <Grid item md={3} style={{width: '50%'}}>
                     <Paper>
                         <Card>
                             <CardContent>
