@@ -29,7 +29,7 @@ export default function MatchResultList ({results}){
                   <Table>
                     <TableHead>
                       <TableRow>
-                        <TableCell>
+                        <TableCell colspan="9" style={{ "text-align": "center" }}>
                           <Typography sx={{color: 'white'}}>MATCH RESULTS</Typography>
                         </TableCell>
                       </TableRow>
