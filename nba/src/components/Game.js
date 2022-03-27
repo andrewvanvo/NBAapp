@@ -19,8 +19,7 @@ import AirplanemodeActiveRoundedIcon from '@mui/icons-material/AirplanemodeActiv
 function Game({ game }) {
 
     return (
-        <>
-
+    
             <ListItem button component='a' href={`/quiz?gameID=${game.id}`}>
                 <Grid item md={2} alignItems='center'>
                     <Avatar src={game.teams.home.logo} />
@@ -37,7 +36,7 @@ function Game({ game }) {
 
 
 
-        </>
+
     )
 }
 

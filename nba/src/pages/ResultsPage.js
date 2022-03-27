@@ -15,7 +15,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText'
 import Paper from '@material-ui/core/Paper'
 import { CardContent } from '@material-ui/core';
-
+import { Typography } from '@mui/material';
 
 
 function ResultsPage(){
@@ -62,15 +62,7 @@ function ResultsPage(){
                     </Grid>
 
                     <Grid item alignItems ='center'>
-                        <Paper>
-                            <Card>
-                                <CardContent>
-                                    <List>
-                                        <MatchResultList results={results}/>
-                                    </List>
-                                </CardContent>
-                            </Card>
-                        </Paper>
+                        <MatchResultList results={results}/>         
                     </Grid>
                 </Grid>
             </Box>

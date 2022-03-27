@@ -18,7 +18,7 @@ function TriviaResults(props){
     let {score} = props
     return(
         <Typography>
-            score: {score}
+            YOUR FINAL SCORE: {score}
         </Typography>
             
         

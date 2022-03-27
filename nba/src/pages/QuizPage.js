@@ -90,6 +90,8 @@ function QuizPage() {
     // let example = exampleGame;
 
     return (
+
+
         <Box height='100vh'>
             <Grid container direction='column'>
                 <Grid item md={3}>
