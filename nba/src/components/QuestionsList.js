@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// function QuestionsList(props) {
 function QuestionsList(props) {
     // Choosing 4 players - currently, ends of array 
-
-
     
     let gameID = props.gameID
     let playerArray = props.usablePlayers
@@ -84,7 +81,7 @@ function QuestionsList(props) {
     return (
 
         <>
-            <p>qlist comp</p>  
+            
             <div className='question-section'>
                 <div className='question-count'>
                     <span>Question {currentQuestion + 1}</span>/{questions.length}
