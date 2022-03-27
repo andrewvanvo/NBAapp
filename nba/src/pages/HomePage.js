@@ -16,7 +16,6 @@ function HomePage() {
   return (
   
       <Box height= '100vh'>
-        <Paper>
         <Grid container direction='row' justifyContent='space-evenly' alignItems='center'>
           <Grid item xs={12} md={3}>
             <Paper>
@@ -45,7 +44,6 @@ function HomePage() {
           </Grid>
 
         </Grid>
-        </Paper>
       </Box>
       
   )

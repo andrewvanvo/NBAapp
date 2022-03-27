@@ -45,7 +45,6 @@ function ResultsPage(){
     return(
         <>
             <Box height='100vh'>
-            <Paper>
                 <Grid container>
 
                     <Grid item>
@@ -57,7 +56,6 @@ function ResultsPage(){
                     </Grid>
 
                 </Grid>
-            </Paper>
             </Box>
             
         </>
